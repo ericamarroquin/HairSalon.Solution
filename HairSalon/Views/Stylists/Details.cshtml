@@ -21,7 +21,7 @@ else
   <ul>
     @foreach (Client client in @ViewBag.AssociatedClients)
     {
-      <li>@Html.ActionLink($"{client.Name}", "Details", "Client", new { id = client.ClientId })</li>
+      <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId })</li>
     }
   </ul>
 }
