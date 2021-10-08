@@ -1,8 +1,8 @@
 # The Hair Salon
 
-#### _This application will allow a user to track clients and stylist in a Hair Salon_
+### _This application will allow a user to track clients and stylist in a Hair Salon_
 
-#### By Erica Marroquin
+### By Erica Marroquin
 
 ## Technologies Used
 
@@ -31,27 +31,35 @@ This application will allow a user to keep track of stylists at a salon and thei
 ### Setup Instructions
 * Clone this repository to desired location using `git clone` command
 * Navigate to HairSalon.Solution/HairSalon
-  - Run the command `dotnet restore` to install all necessary packages
-* Create a `appsettings.json` file in HairSalon.Solution/HairSalon
+* Create an `appsettings.json` file in HairSalon.Solution/HairSalon
   - Open `appsettings.json` and add the following code, changing [YOUR-USERNAME-HERE] and [YOUR-PASSWORD-HERE] to your unique MySQL username and password, respectively:
 ```json
-  {
+{
   "ConnectionStrings": {
       "DefaultConnection": "Server=localhost;Port=3306;database=erica_marroquin;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
   }
 }
 ```
-* Launch the MySQL server in your terminal by running the command `mySql -u[YOUR-USERNAME-HERE] -p[YOUR-PASSWORD-HERE]` and changing to your unique MySQL username and password, as above.
-* Import the necessary database
+
+### Importing the database in MySQL
+* Launch the MySQL server in your terminal by running the command `mySql -u[YOUR-USERNAME-HERE] -p[YOUR-PASSWORD-HERE]` and changing to your unique MySQL username and password, as above
+* Import the database, found in the HairSalon.Solution folder as `erica_marroquin.sql`
   - Open MySQL Workbench
   - Select preferred server
-  - Navigate to "Navigator > Administration" and select "Data Import/Restore"
+  - In the "Navigator > Administration" window, select "Data Import/Restore"
   - In "Import Options" select "Import From Self-Contained File"
-  - Navigate to "HairSalon.Solution/erica_marroquin
+  - Navigate to "HairSalon.Solution/erica_marroquin.sql"
+  - Under "Default Schema to be Imported To" select the "New" button
+  - Enter the name of the database as "erica_marroquin" and click "Ok"
+    - The name of the database can be different, but the name should then match the database name in `appsettings.json` 
+  - Navigate to tab "Import Progress" and click "Start Import"
+  - Refresh the schema in the "Navigator > Schemas" tab and the new database will appear
 
-* To run the application, navigate to BakeryTracker.Solution/BakeryTracker
+### Running the application
+* To run the application, navigate to HairSalon.Solution/HairSalon
+  - Run the command `dotnet restore` to install all necessary packages
   - Run the command `dotnet run`
-  - If a host does not automatically show in your browser, enter, in your browser, the URL given in the console message when starting `dotnet run` from the previous step.
+  - If a host does not automatically show in your browser, enter, in your browser, the URL given in the console message when starting `dotnet run` from the previous step
 
 ## Known Bugs
 
