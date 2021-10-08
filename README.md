@@ -1,6 +1,6 @@
 # The Hair Salon
 
-### _This application will allow a user to track clients and stylist in a Hair Salon_
+### _This application will allow a user to track clients and stylists in a Hair Salon_
 
 ### By Erica Marroquin
 
