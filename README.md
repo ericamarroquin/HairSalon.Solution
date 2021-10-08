@@ -22,23 +22,25 @@ This application will allow a user to keep track of stylists at a salon and thei
 
 ## Setup/Installation Requirements
 
+### Installation Requirements
 * [.NET 5.0](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.401-macos-x64-installer) must be installed for this project
 * [MySQL](https://dev.mysql.com/downloads/) will be used for this project
-  -MacOS must download [MySQL Community Server](https://dev.mysql.com/downloads/mysql/) and [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
-  -Windows can use [MySQL Web Installer](https://dev.mysql.com/downloads/installer/) to download both MySQL Community Server and MySQL Workbench
+  - MacOS must download [MySQL Community Server](https://dev.mysql.com/downloads/mysql/) and [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+  - Windows can use [MySQL Web Installer](https://dev.mysql.com/downloads/installer/) to download both MySQL Community Server and MySQL Workbench
+
+### Setup Instructions
 * Clone this repository to desired location using `git clone` command
 * Navigate to HairSalon.Solution/HairSalon
   - Run the command `dotnet restore` to install all necessary packages
-* Create a `appsettings.json` files in HairSalon.Solution/HairSalon
-  - Open `appsettings.json` and add the following code:
-```
+* Create a `appsettings.json` file in HairSalon.Solution/HairSalon
+  - Open `appsettings.json` and add the following code, changing [YOUR-USERNAME-HERE] and [YOUR-PASSWORD-HERE] to your unique MySQL username and password, respectively:
+```json
   {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=hair_salon;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+      "DefaultConnection": "Server=localhost;Port=3306;database=erica_marroquin;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
   }
 }
 ```
-  - Change [YOUR-USERNAME-HERE] and [YOUR-PASSWORD-HERE] to your unique MySQL username and password, respectively
 * Launch the MySQL server in your terminal by running the command `mySql -u[YOUR-USERNAME-HERE] -p[YOUR-PASSWORD-HERE]` and changing to your unique MySQL username and password, as above.
 * Import the necessary database
   - Open MySQL Workbench
