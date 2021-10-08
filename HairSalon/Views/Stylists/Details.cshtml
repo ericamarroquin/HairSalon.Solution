@@ -2,11 +2,31 @@
   Layout = "_Layout";
 }
 
+@using HairSalon.Models
+@using System
+@using System.Collections.Generic
 @model HairSalon.Models.Stylist
 
-<h3>Stylist details</h3>
+<h2>Stylist details</h2>
 
-<h5>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+@if(ViewBag.AssociatedClients.Count == 0)
+{
+  <p>No clients belong to this stylist yet.</p>
+}
+else
+{
+  <h4>Clients beloning to this stylist:</h4>
+  <ul>
+    @foreach (Client client in @ViewBag.AssociatedClients)
+    {
+      <li>@Html.ActionLink($"{client.Name}", "Details", "Client", new { id = client.ClientId })</li>
+    }
+  </ul>
+}
+
+
 
 <button>
   @Html.ActionLink("Return to all stylists", "Index")

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HairSalon.Controllers
 {
@@ -37,6 +38,8 @@ namespace HairSalon.Controllers
     public ActionResult Details(int id)
     {
       Stylist chosenStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      List<Client> associatedClients = _db.Clients.ToList().Where(client => client.StylistId == id).ToList();
+      ViewBag.AssociatedClients = associatedClients;
       return View(chosenStylist);
     }
   }
